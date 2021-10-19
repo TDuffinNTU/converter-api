@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Frontend for Converter API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+        <link rel="stylesheet" href="custom.css">
+        <!-- <script src="https://unpkg.com/petite-vue" defer init></script> -->
+        <script src="main.js"></script>
+    </head>
+    <body class="bg-secondary" style="--bs-bg-opacity: .1">
+        
+        <navbar class="d-flex bg-success p-3" style="--bs-bg-opacity: 1">                         
+                <a href="#" class="nav-link link-light mx-2">
+                    <span class="fas fa-lg fa-dollar-sign"></span>
+                    <span class="fas fa-lg fa-arrow-right mx-1"></span>
+                    <span class="fas fa-lg fa-euro-sign"></span>
+                </a> 
+                <a href="#" class="nav-link link-light">Github</a>
+                <a href="#" class="nav-link link-light">API Docs</a>
+
+
+        </navbar>
+
+        <!-- main content body -->
+        <div class="container mt-5">            
+            <!-- title and refresh buttn -->
+            <div class="d-flex justify-content-between">
+                <h1> Current rates</h1>
+                <button onclick="refresh()" class = "btn btn-success btn-circle fas fa-sync-alt"></button>
+            </div>
+
+            <!-- show table of content -->
+            <table class = "table table-striped bg-light bg-gradient shadow-lg mt-3">
+                <thead>
+                    <th scope=col>Base</th>  
+                    <th scope=col>Rate</th>  
+                    <th scope=col>Quote</th>  
+                </thead>         
+                <tbody id="table">                    
+                    <tr>
+                        <td>USD</td>
+                        <td>1.323</td>
+                        <td>GBP</td> 
+                    </tr>
+                    <tr>
+                        <td>USD</td>
+                        <td>1.323</td>
+                        <td>GBP</td> 
+                    </tr>
+                    <tr>
+                        <td>USD</td>
+                        <td>1.323</td>
+                        <td>GBP</td> 
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- user input area -->
+            <h1 class="mt-5">Convert Currency</h1>
+            <div class="d-flex justify-content-center userform form-group mt-3">
+                <p1 class="align-self-center"> from </p1>
+                <select name="Base" id="base-select" class="form-control">
+                    <option value="">Select Base</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <input type="text" class="form-control"></input>
+                <p1 class="align-self-center"> to </p1>
+                <select name="Base" id="base-select" class="form-control">
+                    <option value="">Select Quote</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>                
+                <button onclick="submit()" class="btn btn-success form-control">
+                    Submit
+                </button>
+            </div>
+            <div class="mt-2 p-2">
+                <p1>result</p1>
+                <input type="text" id="result" name="result" class="mx-2" disabled></input>
+            </div>
+        </div>      
+    </body>
+
+</html>
